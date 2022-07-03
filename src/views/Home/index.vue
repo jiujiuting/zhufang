@@ -4,7 +4,13 @@
       <van-search disabled placeholder="请输入小区或地址">
         <template #left>
           <div @click="$router.push({ name: 'citylist' })">
-            <span>北京<van-icon name="play" /></span>城市
+            <span
+              >{{
+                $store.state.currentCity === null
+                  ? "杭州"
+                  : $store.state.currentCity.label
+              }}<van-icon name="play"
+            /></span>
           </div>
         </template>
       </van-search>

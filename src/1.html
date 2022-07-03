@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var citys = [
+        { cityName: '安康', citySort: '安康ankang', cityCode: '310000' },
+        { cityName: '安阳', citySort: '安康anyang', cityCode: '330000' },
+        { cityName: '百安', citySort: '百安康baiankang', cityCode: '310000' },
+        { cityName: '北京', citySort: '北京beijing', cityCode: '110000' },
+        { cityName: '遵义', citySort: '遵义zunyi', cityCode: '310000' },
+        { cityName: '西安', citySort: '西安xian', cityCode: '310000' },
+      ]
+      let citysItem = []
+      let lettArr = []
+      for (let i = 0; i < citys.length; i++) {
+        let letter =
+          citys[i].citySort.replace(/[^a-zA-Z]/g, '').length > 0
+            ? citys[i].citySort.replace(/[^a-zA-Z]/g, '').substring(0, 1)
+            : ''
+        if (lettArr.indexOf(letter) <= -1) {
+          lettArr.push(letter)
+        }
+      }
+      lettArr = lettArr.sort() // 排序
+      for (let i = 0; i < lettArr.length; i++) {
+        let tempCityObjArr = []
+        let tempObj = {}
+        let letterTemp = lettArr[i]
+        tempObj.letter = letterTemp
+        for (let j = 0; j < citys.length; j++) {
+          let letter = citys[j].citySort
+            .replace(/[^a-zA-Z]/g, '')
+            .substring(0, 1)
+          if (letterTemp === letter) {
+            tempCityObjArr.push(citys[j])
+          }
+        }
+        tempObj.cityList = tempCityObjArr
+        citysItem.push(tempObj)
+      }
+      console.log(citysItem)
+    </script>
+  </body>
+</html>

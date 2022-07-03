@@ -1,8 +1,11 @@
 <template>
-  <div>找房</div>
+  <div>
+    <SharedSearch></SharedSearch>
+  </div>
 </template>
 
 <script>
+import SharedSearch from '@/components/SharedSearch.vue'
 export default {
   created () { },
   data () {
@@ -12,9 +15,11 @@ export default {
   computed: {},
   watch: {},
   filters: {},
-  components: {}
+  components: {
+    SharedSearch
+  }
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 </style>

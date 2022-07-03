@@ -20,7 +20,7 @@ const routes = [
     component: Layout,
     redirect: '/home',
     children: [
-      { path: 'home', component: Home },
+      { path: 'home', component: Home, name: 'home' },
       { path: 'housing', component: Housing },
       { path: 'service', component: Service },
       { path: 'my', component: My, name: 'my' }

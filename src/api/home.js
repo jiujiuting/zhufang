@@ -12,3 +12,16 @@ export const rentingList = (area) => {
     }
   })
 }
+export const HomeCityList = (level) => {
+  return request({
+    url: '/area/city',
+    params: {
+      level
+    }
+  })
+}
+export const HomeHotCity = () => {
+  return request({
+    url: '/area/hot'
+  })
+}
