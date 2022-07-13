@@ -21,7 +21,8 @@ export default {
   data () {
     return {}
   },
-  methods: {},
+  methods: {
+  },
   computed: {},
   watch: {},
   filters: {},
@@ -34,7 +35,7 @@ export default {
   /deep/ .van-icon {
     font-size: 25px !important;
   }
-  .am-tab-bar-tab-title{
+  .am-tab-bar-tab-title {
     font-size: 10px;
   }
 }

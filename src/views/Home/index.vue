@@ -14,7 +14,11 @@
           </div>
         </template>
       </van-search>
-      <van-icon class="search-icon" name="location-o" />
+      <van-icon
+        class="search-icon"
+        name="location-o"
+        @click="$router.push('/themap')"
+      />
     </div>
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="item in SlideshowList" :key="item.id">
@@ -22,28 +26,28 @@
       </van-swipe-item>
     </van-swipe>
     <van-grid>
-      <van-grid-item icon="photo-o" text="整租">
+      <van-grid-item icon="photo-o" text="整租" to="/housing">
         <template #icon>
           <div class="list-icon">
             <van-icon name="wap-home-o" />
           </div>
         </template>
       </van-grid-item>
-      <van-grid-item icon="photo-o" text="合租">
+      <van-grid-item icon="photo-o" text="合租" to="/housing">
         <template #icon>
           <div class="list-icon">
             <van-icon name="friends-o" />
           </div>
         </template>
       </van-grid-item>
-      <van-grid-item icon="photo-o" text="地图找房">
+      <van-grid-item icon="photo-o" text="地图找房" to="/themap">
         <template #icon>
           <div class="list-icon">
             <van-icon name="location-o" />
           </div>
         </template>
       </van-grid-item>
-      <van-grid-item icon="photo-o" text="去出租">
+      <van-grid-item icon="photo-o" text="去出租" to="/homehousing">
         <template #icon>
           <div class="list-icon">
             <van-icon name="home-o" />
@@ -212,7 +216,6 @@ export default {
 .zhufang-img {
   width: 50px;
   height: 50px;
-  background-color: rgb(207, 10, 10);
   margin: 0 10px;
   img {
     width: 100%;

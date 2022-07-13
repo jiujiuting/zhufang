@@ -10,6 +10,8 @@ const My = () => import('@/views/My')
 const MyRent = () => import('@/views/My/MyRent.vue')
 const MyHousing = () => import('@/views/My/MyHousing.vue')
 const CityList = () => import('@/views/Home/CityList.vue')
+const TheMap = () => import('@/views/TheMap')
+const HomeHousing = () => import('@/views/Home/Housing.vue')
 
 Vue.use(VueRouter)
 
@@ -21,7 +23,7 @@ const routes = [
     redirect: '/home',
     children: [
       { path: 'home', component: Home, name: 'home' },
-      { path: 'housing', component: Housing },
+      { path: 'housing', component: Housing, name: 'housing' },
       { path: 'service', component: Service },
       { path: 'my', component: My, name: 'my' }
     ]
@@ -29,7 +31,9 @@ const routes = [
   { path: '/login', component: Login, name: 'login' },
   { path: '/myrent', component: MyRent, name: 'myrent' },
   { path: '/myhousing', component: MyHousing, name: 'myhousing' },
-  { path: '/citylist', component: CityList, name: 'citylist' }
+  { path: '/citylist', component: CityList, name: 'citylist' },
+  { path: '/themap', component: TheMap },
+  { path: '/homehousing', component: HomeHousing }
 ]
 const router = new VueRouter({
   routes
